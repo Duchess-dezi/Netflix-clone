@@ -56,5 +56,12 @@ const makeCategoryElement = (category , data) => {
         <p class="movie-title">${item.title}</p>
     </div>
         `;
+
+        if(i == data, length - 1){
+            setTimeout(() => {
+               setupScrollbar()
+            }, 100);
+        }
+         
     })
  }

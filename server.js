@@ -7,7 +7,15 @@ let app = express();
 app.use(express.static(initial_path));
 
 app.get('/', (req, res) =>{
-    res.sendfile(path.join(initial_path, "index.html"));
+    res.sendFile(path.join(initial_path, "index.html"));
+})
+
+app.get('/:id', (req, res) => {
+    res.sendFile(path.join(initial_path, "about.html"));
+})
+
+app.use((req, res) => {
+    res.json("404");
 })
 
 app.listen(3000, () => {
